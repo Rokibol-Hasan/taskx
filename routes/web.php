@@ -9,3 +9,4 @@ Route::get('/', function () {
 
 
 Route::get('/dosomething',[TasksController::class, 'doSomething']);
+Route::get('/tasks',[TasksController::class, 'index']);

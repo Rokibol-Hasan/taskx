@@ -7,6 +7,15 @@ use App\Models\Task;
 
 class TasksController extends Controller
 {
+
+    function index(){
+        // $tasks = Task::where('status', 'completed')->get();
+        // $tasks = Task::where('status', 'completed')->count();
+        // $tasks = Task::findOrFail(9);
+        // $tasks = Task::orderBy('id', 'asc')->get();
+        $tasks = Task::all();
+        return $tasks;
+    }
     function doSomething()
     {
         // Task::create([
@@ -15,11 +24,12 @@ class TasksController extends Controller
         //     'due_date' => '2021-01-01',
         // ]);
 
-        Task::create([
-            'title' => fake()->sentence(15),
-            'description' => fake()->sentence(30),
-            'due_date' => now()->addDays(rand(1,7)),
-        ]);
+        // Task::create([
+        //     'title' => fake()->sentence(15),
+        //     'description' => fake()->sentence(30),
+        //     'due_date' => now()->addDays(rand(1,7)),
+        // ]);
+        // Task::find(1)->update(['status' => 'completed']);
         return 'done';
     }
 }

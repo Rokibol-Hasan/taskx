@@ -15,4 +15,8 @@ class Task extends Model
         'status',
         'due_date',
     ];
+    protected $hidden = [
+        'updated_at',
+        'created_at',
+    ];
 }
